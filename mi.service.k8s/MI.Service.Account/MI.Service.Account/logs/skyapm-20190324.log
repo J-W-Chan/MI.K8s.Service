@@ -1,0 +1,27 @@
+2019-03-24 18:29:18.840 +08:00 [MI.Service.Account] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-03-24 18:29:18.890 +08:00 [MI.Service.Account] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-03-24 18:29:18.891 +08:00 [MI.Service.Account] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-03-24 18:29:18.891 +08:00 [MI.Service.Account] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-03-24 18:29:18.893 +08:00 [MI.Service.Account] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-03-24 18:29:18.894 +08:00 [MI.Service.Account] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-03-24 18:29:18.894 +08:00 [MI.Service.Account] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-03-24 18:29:18.926 +08:00 [MI.Service.Account] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-03-24 18:29:18.927 +08:00 [MI.Service.Account] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2019-03-24 18:29:53.562 +08:00 [MI.Service.Account] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-03-24 18:29:53.590 +08:00 [MI.Service.Account] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-03-24 18:29:53.590 +08:00 [MI.Service.Account] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-03-24 18:29:53.591 +08:00 [MI.Service.Account] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-03-24 18:29:53.591 +08:00 [MI.Service.Account] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-03-24 18:29:53.591 +08:00 [MI.Service.Account] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-03-24 18:29:53.592 +08:00 [MI.Service.Account] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-03-24 18:29:53.607 +08:00 [MI.Service.Account] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-03-24 18:29:53.608 +08:00 [MI.Service.Account] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2019-03-24 18:32:32.867 +08:00 [MI.Service.Account] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-03-24 18:32:32.899 +08:00 [MI.Service.Account] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-03-24 18:32:32.899 +08:00 [MI.Service.Account] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-03-24 18:32:32.900 +08:00 [MI.Service.Account] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-03-24 18:32:32.900 +08:00 [MI.Service.Account] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-03-24 18:32:32.900 +08:00 [MI.Service.Account] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-03-24 18:32:32.900 +08:00 [MI.Service.Account] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-03-24 18:32:32.915 +08:00 [MI.Service.Account] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-03-24 18:32:32.916 +08:00 [MI.Service.Account] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.

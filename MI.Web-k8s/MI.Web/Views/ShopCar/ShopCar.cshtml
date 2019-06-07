@@ -1,0 +1,181 @@
+﻿@using MI.Service.ShopCar.Model.Response
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShopCar</title>
+    <link href="~/Content/ShopCar.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        var carID = null;
+        $(function () {
+            carID = $("#CarID").val();
+        });
+
+        function ChangeCount(btn) {
+            var subtotal;
+            var count= $(btn).siblings(".count").val();
+            var total = $(".cart-total-price").text();
+            var unitprice = $(btn).parent().siblings("#price").text();
+            //如果是减少操作 判断当前数量是否为1 为1则返回不做任何操作
+            var operate = $(btn).attr("operate");
+            if (operate == "reduce" && count <= 1) {
+                    return;
+            }
+            if (operate == "reduce")
+            {
+                $(btn).siblings(".count").val(parseInt(count)-1);
+            }
+            if (operate == "add")
+            {
+                $(btn).siblings(".count").val(parseInt(count) + 1);
+            }
+            var productId = $(btn).attr("pid");
+            var versionID = $(btn).attr("versionID");
+            var count = $(btn)
+            $.get("/ShopCar/CountChange", { CarID: carID, ProductID: productId, VersionID: versionID, Operate: operate }, function (data) {
+            }, "json");
+
+            if (operate == "add")
+            {
+                subtotal = $(btn).parent().siblings("#subtotal").text();
+                $(btn).parent().siblings("#subtotal").text(parseInt(subtotal) + parseInt(unitprice));
+                $(".cart-total-price").text(parseInt(total)+parseInt(unitprice));
+
+            }
+            if (operate == "reduce") {
+                subtotal = $(btn).parent().siblings("#subtotal").text();
+                $(btn).parent().siblings("#subtotal").text(parseInt(subtotal) - parseInt(unitprice));
+                $(".cart-total-price").text(parseInt(total) - parseInt(unitprice));
+            }
+        }
+
+        function DelProduct(btn)
+        {
+            var productID = $(btn).attr("pid");
+            var versionID = $(btn).attr("versionID");
+            $.get("/ShopCar/DelProduct", { ProductID: productID, VersionID: versionID }, function (data) {
+                switch (data)
+                {
+                    case "ok":
+                        $(btn).parent().parent().parent().parent().remove();
+                        break;
+                    case "err":
+                        alert("删除失败");
+                        break;
+                }
+            }, "json");
+        }
+
+        function Check(btn)
+        {
+            var productID = $(btn).attr("pid");
+            var versionID = $(btn).attr("versionID");
+            $.get("/ShopCar/ChangeCheck", { ProductID: productID, VersionID: versionID }, function (data) {
+                $(".cart-total-price").text(data);
+                if ($(btn).hasClass("icon-check")) {
+                    //如果是选中状态 清除背景色等样式 清空文本
+                    $(btn).removeClass("icon-check").text("/");
+                }
+                else {
+                    $(btn).addClass("icon-check").text("√");
+                }
+            }, "json");
+        }
+
+    </script>
+</head>
+<body>
+
+    @*@Html.Action("PageHeader", "Shared", new { title = "购物车" })*@
+
+    <div class="page-main">
+        <div class="container">
+            <div class="cartBox">
+                <div class="list-header">
+                    <div class="col-check">
+                        <i class="icon-font icon-checkbox icon-check">√</i>
+                        全选
+                    </div>
+
+                    <div class="col" style="width:120px">&nbsp;</div>
+
+                    <div class="col col-name">商品名称</div>
+
+                    <div class="col col-price">单价</div>
+
+                    <div class="col col-num" style="padding-right:15px">数量</div>
+
+                    <div class="col col-total" style="margin-left:20px;">小计</div>
+
+                    <div class="col col-action" style="padding-left:10px;">操作</div>
+                </div>
+
+                @foreach (var item in Model as IEnumerable<ShopList>)
+                {
+                    //隐藏域 用来存储商品ID 和 购物车ID
+                    <input type="hidden" value="@item.CarID" id="CarID" />
+
+                    <div class="list-body">
+                        <div class="item-box">
+                            <div class="item-table">
+                                <div class="item-row">
+                                    <div class="col-item-check">
+                                        <i class="icon-font icon-checkbox icon-check" versionID="@item.VersionID" pid="@item.ProductID" onclick="Check(this)">√</i>
+                                    </div>
+                                    <div class="col-img"><a href="#"><img src="@item.ProductImg" style="width:80px; height:80px;" /></a></div>
+
+                                    <div class="col-common col-name">
+                                        <div class="tag" style="font-weight:bold;">@item.ProductName &nbsp;&nbsp; <span>@item.versionInfo</span></div>
+                                    </div>
+
+                                    <div class="col-common col-price" id="price">@item.Price</div>
+
+                                    <div class="col-common col-num" style="width:160px;">
+
+                                        @*数量减少*@
+                                        <a class="count-reduce" versionID="@item.VersionID" pid="@item.ProductID" operate="reduce" onclick="ChangeCount(this)">
+                                            <i class="glyphicon glyphicon-minus icon-align-justify" style="vertical-align:middle;"></i>
+                                        </a>
+                                        <input type="text" value="@item.Count" class="count" readonly="readonly" />
+
+                                        @*数量增加*@
+                                        <a class="count-add" pid="@item.ProductID" versionID="@item.VersionID" operate="add" onclick="ChangeCount(this)">
+                                            <i class="glyphicon glyphicon-plus" style="font-size:10px; vertical-align:middle;"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-common col-total" style="color:#ff6700;" id="subtotal">@item.Subtotal</div>
+
+                                    <div class="col-common col-action" pid="@item.ProductID" versionID="@item.VersionID" onclick="DelProduct(this)">
+                                        <a href="#" class="del">
+                                            <i class="glyphicon glyphicon-remove"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="car-bar" style="margin-bottom:100px;">
+                    <div class="section-left">
+                        <a href="#" class="back-Shopping">继续购物</a>
+                        <span class="shop-total">共<span class="selToNum"> @ViewBag.Count </span>件商品，已选择<span class="selToNum"> 1 </span>件商品</span>
+                        <span class="total-price">合计（不含运费）：<span class="cart-total-price">@ViewBag.Total</span>元</span>
+                        <a href="/CheckOut/CheckView" class="cart-btn ">去结算</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

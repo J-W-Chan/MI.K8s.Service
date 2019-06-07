@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "AddRoutingKey";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<h2>AddRoutingKey</h2>
+
+
+<input type="text" class="form-control" id="routingKey" value="" />
+<input type="text" class="form-control" id="apiUrl" value="" />
+<input type="button" id="Add" class="btn-success" value="确认添加" onclick="AddRoutingKey()" />
+
+
+<script>
+    function AddRoutingKey() {
+        var routingKey = $("#routingKey").val();
+        var apiUrl = $("#apiUrl").val();
+        $.post("/RabbitMqManager/AddRoutingKey", { routingKey: routingKey, apiUrl: apiUrl }, function (data) {
+            switch (data) {
+                case "OK":
+                    alert("添加成功！")
+                    break;
+                case "err":
+                    alert("添加失败！");
+                    break;
+            }
+        }, "json");
+    }
+</script>
+

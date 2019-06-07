@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Com.Ctrip.Framework.Apollo.Configuration" Version="1.5.1" />
+    <PackageReference Include="EventBus" Version="1.0.0.3" />
+    <PackageReference Include="EventBusRabbitMQ" Version="1.0.0.9" />
+    <PackageReference Include="IdentityModel" Version="3.10.4" />
+    <PackageReference Include="log4net.Kafka.Core" Version="1.0.2" />
+    <PackageReference Include="MI.APIClientService" Version="1.0.0.10" />
+    <PackageReference Include="MI.Service.Account.Model" Version="1.0.0.6" />
+    <PackageReference Include="MI.Service.Monitor.Model" Version="1.0.0.2" />
+    <PackageReference Include="MI.Service.ShopCar.Model" Version="1.0.0.6" />
+    <PackageReference Include="MI.Untity" Version="1.0.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="2.2.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="SkyAPM.Agent.AspNetCore" Version="0.8.0" />
+    <PackageReference Include="zipkin4net" Version="1.2.3" />
+    <PackageReference Include="zipkin4net.middleware.aspnetcore" Version="1.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Images\banner1.svg" />
+    <None Include="wwwroot\Images\banner2.svg" />
+    <None Include="wwwroot\Images\banner3.svg" />
+    <None Include="wwwroot\Images\banner4.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="ES.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApiModel\AccountService\Request\" />
+    <Folder Include="ApiModel\AccountService\Response\" />
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties bundleconfig_1json__JSONSchema="" appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+</Project>

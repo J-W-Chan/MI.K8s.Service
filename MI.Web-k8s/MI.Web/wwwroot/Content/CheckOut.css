@@ -1,0 +1,304 @@
+﻿body {
+    margin:0px;
+    padding:0px;
+    background:#f5f5f5;
+}
+div{
+    display:block;
+}
+
+.page-main{
+    padding-top:40px;
+    padding-bottom:60px;
+}
+
+.container{
+    width:1226px;
+    margin:20px auto;
+}
+
+.checkout-box{
+    padding:0;
+    background:#fff;
+}
+
+.section{
+    margin-left:48px;
+    margin-right:48px;
+}
+
+.section-address{
+    width:1130px;
+    height:244px;
+    margin-bottom:20px;
+    display:block;
+}
+
+.section-header{
+    width:1130px;
+    height:20px;
+    display:block;
+}
+
+.title{
+    width:1130px;
+    float:left;
+    color:#333;
+    font-size:20px;
+    line-height:20px;
+    font-weight:700;
+}
+
+.section-body{
+    margin-left:-18px;
+    display:block;
+}
+
+.item-address{
+    float:left;
+    margin-left:17px;
+    margin-bottom:15px;
+    width:268px;
+    height:178px;
+    border:1px dashed #ff6700;
+    cursor:pointer;
+    display:block;
+}
+
+.item-address-name {
+    font-size:18px;
+    color:#333;
+    font-weight:600;
+}
+
+.dd{
+    margin:0;
+    color:#757575;
+    line-height:30px;
+}
+.action{
+    float:right;
+    margin-right:20px;
+}
+
+.modify{
+    margin-left:10px;
+    color:#ff6700;
+}
+
+.write-address{
+    width:1000px;
+    height:400px;
+    border:1px solid #ff6700;
+    display:none;
+}
+
+.item-control{
+    margin:10px;
+    width:250px;
+    margin-bottom:20px;
+}
+
+.item-select{
+    width:115px;
+    float:left;
+}
+
+.full-address{
+    width:250px;
+    margin-left:10px;
+}
+
+.item-btn{
+    width:100px;
+    float:left;
+    margin-left:15px;
+}
+
+.section-option{
+    padding:25px 0;
+    display:block;
+}
+
+.title-first{
+    font-size:14px;
+    font-weight:normal;
+    color:#ff6700;
+    margin-left:100px;
+    padding-bottom:20px;
+}
+
+.section-ul{
+    list-style:none;
+    float:left;
+    border:0px;
+}
+
+.item-date{
+    border:1px solid #e0e0e0;
+    color:#333;
+    width:235px;
+    height:37px;
+    float:left;
+    font-size:14px;
+    text-align:center;
+    padding:8px;
+    margin-left:30px;
+    margin-top:-8px;
+    cursor:pointer;
+}
+
+.section-goods{
+    width:1130px;
+    height:auto;
+    display:block;
+    height:auto;
+}
+
+.more{
+    float:right;
+    font-size:14px;
+    color:#b0b0b0;
+    margin-right:100px;
+    text-decoration:none;
+}
+
+.good-list{
+    padding:5px 0;
+    margin:20px;
+    list-style:none;
+    border-bottom:1px solid #e0e0e0;
+}
+
+.item-pro{
+    list-style:none;
+    margin-top:20px;
+    margin-left:-20px;
+    width:1130px;
+    height:50px;
+}
+
+.col{
+    line-height:30px;
+    color:#424242;
+    float:left;
+    width:1130px;
+    height:50px;
+}
+
+.col-img{
+    width:30px;
+    height:30px;
+}
+
+.col-name{
+    width:500px;
+    padding-left:100px;
+}
+
+.col-name a{
+    color:#424242;
+    text-decoration:none;
+}
+
+.col-price{
+    width:150px;
+    text-align:center;
+}
+
+.col-status{
+    width:100px;
+    text-align:center;
+}
+
+.col-total{
+    width:190px;
+    text-align:center;
+    color:#ff6700;
+}
+
+.section-count{
+    min-height:200px;
+    padding:20px 0;
+    padding-bottom:30px;
+    position:relative;
+}
+
+.buyer_msg{
+    width:580px;
+    position:absolute;
+    top:5px;
+    left:0;
+    bottom:20px;
+    text-align:left;
+}
+
+.money-box{
+    position:absolute;
+    right:0;
+    bottom:20px;
+    text-align:right;
+}
+
+.money-box li{
+    display:block;
+    padding-left:100px;
+    line-height:2;
+    position:relative;
+    zoom:1;
+}
+
+.money-box label{
+    position:absolute;
+    top:0;
+    left:0;
+    width:90px;
+    color:#757575;
+    zoom:1;
+}
+
+.val{
+    color:#ff6700;
+    zoom:1;
+}
+
+.total-price{
+    color:#ff6700;
+    zoom:1;
+    font-size:30px;
+}
+
+.section-bar{
+    padding:10px 40px;
+    height:60px;
+    border:2px solid #f5f5f5;
+    display:block;
+}
+
+.btn-div{
+    float:right;
+    color:#757575;
+    padding-bottom:30px;
+    display:block;
+}
+
+.btn-sure{
+    float:right;
+    margin-left:30px;
+    text-align:center;
+    vertical-align:top;
+    background:#ff6700;
+    border-color:#ff6700;
+    color:#fff;
+    width:158px;
+    height:38px;
+    font-size:14px;
+    line-height:38px;
+    cursor:pointer;
+    text-decoration:none;
+    display:block;
+}
+
+.btn-sure:hover{
+    text-decoration:none;
+}

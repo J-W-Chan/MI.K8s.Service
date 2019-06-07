@@ -1,0 +1,10 @@
+Consul:  docker run -d --name consul -p 8500:8500 consul
+
+RabbitMQ£ºdocker run -d --hostname my-rabbit --name rabbitmq -p 8080:15672 -p 5672:5672 rabbitmq:3-management
+
+docker run -d  -p 5601:5601 -p 9200:9200 -p 9300:9300 -p 5044:5044 -v /var/data/elk:/var/lib/elasticsearch --name=elk sebp/elk
+
+
+docker run -d  -p 5601:5601 -p 9200:9200 -p 9300:9300 -p 5044:5044 -e ES_MIN_MEM=128m  -e ES_MAX_MEM=2048m --name=elk sebp/elk
+
+docker run -d -p 8020:80 -v $PWD/nuget/db:/var/www/db -v $PWD/nuget/packages:/var/www/packagefiles -e NUGET_API_KEY=ee28314c-f7fe-2550-bd77-e09eda3d0119 sunside/simple-nuget-server

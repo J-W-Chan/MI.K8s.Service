@@ -1,0 +1,327 @@
+﻿@using MI.Web.ApiModel.PictureService.Response
+@{
+    Layout = null;
+}
+
+<meta name="viewport" content="width=device-width" />
+<title>MI</title>
+<script src="~/js/jquery-1.10.2.min.js"></script>
+<script src="~/js/MyScripts/master_navigation.js"></script>
+<link href="~/css/zui.css" rel="stylesheet" />
+<link href="~/css/Home.css" rel="stylesheet" />
+<link href="~/css/master.css" rel="stylesheet" />
+
+<style type="text/css">
+    .slideimg_box {
+        float: left;
+        width: 955px;
+        height: 465px;
+        overflow: hidden;
+    }
+
+        .slideimg_box li {
+            list-style: none;
+            float: left;
+        }
+
+        .slideimg_box img {
+            margin-top: 10px;
+        }
+
+    #ShopCar {
+        background: #424242;
+        width: 120px;
+        height: 37px;
+        margin-top: 0px;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    #master_left {
+        line-height: 35px;
+    }
+
+    #master_right {
+        line-height: 35px;
+    }
+
+    .btnCar {
+        width: 80px;
+        height: 30px;
+        background: #ff6700;
+        color: #fff;
+        border: 1px solid #ff6700;
+        font-size: 12px;
+        opacity: 0.8;
+    }
+</style>
+
+<script type="text/javascript">
+    //自动轮播变量
+    var autoIndex = 0;
+    //点击换图变量
+    var Index = 1;
+    //获取轮播图片总数量
+    var imgCount = 0;
+    $(function () {
+        //轮播效果
+        setInterval("AutomaticSlide()", 3000);
+        NextSlideImg();
+
+        $(".more i:first").click(StartPrev);
+
+        $(".more i:last").click(StartNext);
+        imgCount = $(".item-img").length;
+    });
+
+
+    function NextSlideImg() {
+
+        $(".right_next i").click(function () {
+            Index++;
+            if (Index == imgCount + 1) {
+                $(" .slide-list").css("margin-left", 0 + "px");
+                Index = 1;
+            }
+            else {
+                $(" .slide-list").css("margin-left", -(Index - 1) * 955 + "px");
+            }
+        });
+
+        $(".left_up i").click(function () {
+            Index--;
+            if (Index == 0 || Index < 0) {
+                Index = imgCount;
+                $(" .slide-list").css("margin-left", -(Index - 1) * 955 + "px");
+            }
+            else {
+                $(" .slide-list").css("margin-left", -(Index - 1) * 955 + "px");
+            }
+
+        });
+    }
+    //自动轮播
+    function AutomaticSlide() {
+        autoIndex++;
+        if (autoIndex == imgCount) {
+            $(" .slide-list").css("margin-left", 0 + "px");
+            autoIndex = 0;
+        }
+        else {
+            $(" .slide-list").css("margin-left", -autoIndex * 955 + "px");
+        }
+    }
+
+    function StartPrev() {
+        if ($("#StartIndex").val() == 1)
+            return;
+        else {
+            $.get("/Home/StartSlide/", { StartIndex: 1 }, function (data) {
+                makeStart_ul(data);
+                $(".more i:first").css("color", "#e0e0e0");
+                $(".more i:last").css("color", "#333");
+                $("#StartIndex").val(1);
+            }, "json");
+        }
+    }
+
+    function StartNext() {
+        if ($("#StartIndex").val() == 2)
+            return;
+        else {
+            $.get("/Home/StartSlide/", { StartIndex: 2 }, function (data) {
+                makeStart_ul(data);
+                $(".more i:last").css("color", "#e0e0e0");
+                $(".more i:first").css("color", "#333");
+                $("#StartIndex").val(2);
+            }, "json");
+        }
+    }
+
+    function makeStart_ul(data) {
+        var row = '';
+        for (var u in data) {
+            row += '<li>';
+            row += '<a href=\"#\"><img src="' + data[u].StartImg + '" /></a>';
+            row += '<a href=\"#\"><h3 class=\"title\">' + data[u].StartName + '</h3></a>';
+            row += '<p class=\"describe\">' + data[u].Describe + '</p>';
+            row += '<p class=\"price\">' + data[u].Price + ' 元</p>';
+            row += '</li>';
+        }
+        $(".box-body ul").html(row);
+    }
+
+    function AddCar(btn) {
+        var productID = $(btn).attr("pID");
+        var versionID = $(btn).attr("versionID");
+        $.get("/ShopCar/AddCar", { ProductID: productID, VersionID: versionID }, function (data) {
+            alert("添加购物车成功");
+        }, "json");
+    }
+</script>
+
+<div id="div_navigation_bar" style="height:40px;width:1356px;">
+    <ul id="master_left" class="master_navigation">
+        <li><a href="#">小米商城</a></li>
+        <li><a href="#">MIUI</a></li>
+        <li><a href="#">米聊</a></li>
+        <li><a href="#">游戏</a></li>
+        <li><a href="#">多看阅读</a></li>
+        <li><a href="#">云服务</a></li>
+        <li><a href="#">金融</a></li>
+        <li><a href="#">小米移动版</a></li>
+        <li><a href="#">问题反馈</a></li>
+        <li><a href="#">SelectRegion</a></li>
+    </ul>
+    <ul id="master_right" class="master_navigation">
+        @if (ViewBag.UserName != null)
+        {
+            <li><a href="/Order/OrderView">@ViewBag.UserName</a></li>
+        }
+        else
+        {
+            <li><a href="/Login/Login">登录</a></li>
+        }
+        <li><a href="#">消息</a></li>
+        <li><a href="#">通知</a></li>
+        @if (ViewBag.UserName != null)
+        {
+            <li id="ShopCar"><a href="/ShopCar/ShopCar/@ViewBag.UserName" style="color:#b0b0b0;font-size:12px;"><i class="icon icon-shopping-cart"></i>购物车</a></li>
+        }
+        else
+        {
+            <li id="ShopCar"><a href="/ShopCar/ShopCar" style="color:#b0b0b0;font-size:12px;"><i class="icon icon-shopping-cart"></i>购物车</a></li>
+        }
+    </ul>
+</div>
+
+<div class="site-header">
+
+    <div class="header-logo">
+        <a><img src="/Images/MI.png" style="width:55px;height:55px;" /></a>
+    </div>
+
+    <div class="header-nav">
+        <ul>
+            <li class="nav-item"><a href="#" class="link">小米手机</a></li>
+            <li class="nav-item"><a href="#" class="link">红米</a></li>
+            <li class="nav-item"><a href="#" class="link">平板 笔记本</a></li>
+            <li class="nav-item"><a href="#" class="link">电视</a></li>
+            <li class="nav-item"><a href="#" class="link">盒子 影音</a></li>
+            <li class="nav-item"><a href="#" class="link">路由器</a></li>
+            <li class="nav-item"><a href="#" class="link">智能硬件</a></li>
+            <li class="nav-item"><a href="#" class="link">服务</a></li>
+            <li class="nav-item"><a href="#" class="link">社区</a></li>
+        </ul>
+    </div>
+
+    <div class="header-search">
+        <input type="text" class="search-text" placeholder=" 小米MIX" />
+        <input type="button" class="search-btn" />
+    </div>
+
+</div>
+
+<div class="home_container">
+    <div class="home-hero">
+        <div class="ul-wrapper">
+            <div class="ul-viewport">
+                <ul>
+                    <li class="li_hero_sort" style="margin-top:20px"><a href="#" class="ui_link">手机 电话卡</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">笔记本 平板</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">电视 盒子</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">路由器 智能硬件</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">移动电源 电池 插线板</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">耳机 音箱</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">保护套 贴膜</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">线材 支架 存储卡</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">箱包 服饰</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                    <li class="li_hero_sort"><a href="#" class="ui_link">米兔 生活周边</a><span class="arrow"><i class="icon icon-chevron-right"></i></span></li>
+                </ul>
+            </div>
+
+            <div class="right_next">
+                <i class="icon icon-chevron-right icon-3x" style="color:white;opacity:0.8; cursor:pointer;z-index:100;"></i>
+            </div>
+
+            <div class="left_up">
+                <i class="icon icon-chevron-left icon-3x" style="color:white;opacity:0.8;cursor:pointer;z-index:100;"></i>
+            </div>
+
+            <div class="slideimg_box">
+                <ul class="slide-list">
+                    @foreach (var item in ViewData["SlideImg"] as IEnumerable<SlideImgModel>)
+                    {
+                        <li class="item-img" pid="@item.ProductID"><a href="@item.LinkPage"><img src="@item.ImgName" /></a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="home_hero_sub">
+        <div class="span4">
+            <a href="#"><img src="~/Images/pic4.jpg" /></a>
+        </div>
+        <div class="span3">
+            <ul>
+                <li><a href="#"><img src="~/Images/pic1.jpg" /></a></li>
+                <li><a href="#"><img src="~/Images/pic2.jpg" /></a></li>
+                <li><a href="#"><img src="~/Images/pic3.jpg" /></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="home_starts_goods">
+        <div class="box-head">
+            <h2>小米明星单品</h2>
+            <div class="more">
+                <a><i class="icon icon-chevron-left" style="cursor:pointer;padding:3px;color:#e0e0e0;"></i></a>
+                <a><i class="icon icon-chevron-right" style="cursor:pointer;padding:3px;color:#333;"></i></a>
+                <a style="border:0px;"></a>
+            </div>
+        </div>
+
+        <div class="box-body">
+            <input type="hidden" value="1" id="StartIndex" />
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a href="@item.LinkPage"><img src="@item.StartImg" /></a>
+                        <a href="@item.LinkPage"><h3 class="title">@item.StartName</h3></a>
+                        <p class="describe">@item.Describe</p>
+                        <p class="price">@item.Price 元</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="home_main">
+        <div id="smart" class="smart1">
+
+            <div class="box-head" ;">
+                <h2>智能硬件</h2>
+            </div>
+
+            <div class="box-body-smart1">
+                <div class="smart1-span4"><img src="~/Images/Smart1-iRobot.jpg" /></div>
+                <div class="smart1-span16">
+                    <ul style="list-style-type:none">
+                        @foreach (var item in ViewData["HradWare"] as IEnumerable<HadrWareModel>)
+                        {
+                            <li>
+                                <input type="button" class="btnCar" value="加入购物车" pID="@item.ProductID" versionID="@item.VersionID" onclick="AddCar(this)" />
+                                <a href="@item.LinkPage"><img src="@item.HardWareImg" /></a>
+                                <a href="@item.LinkPage"><h3 class="title">@item.ProductName</h3></a>
+                                <p class="describe">@item.Describe</p>
+                                <p class="price">@item.Price 元</p>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

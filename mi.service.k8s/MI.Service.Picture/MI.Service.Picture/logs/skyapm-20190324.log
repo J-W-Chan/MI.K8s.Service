@@ -1,0 +1,60 @@
+2019-03-24 18:37:55.808 +08:00 [MI.Service.Picture] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-03-24 18:37:55.889 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-03-24 18:37:55.889 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-03-24 18:37:55.890 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-03-24 18:37:55.891 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-03-24 18:37:55.892 +08:00 [MI.Service.Picture] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-03-24 18:37:55.892 +08:00 [MI.Service.Picture] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-03-24 18:37:55.937 +08:00 [MI.Service.Picture] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-03-24 18:37:55.938 +08:00 [MI.Service.Picture] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2019-03-24 18:38:07.795 +08:00 [MI.Service.Picture] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.<WaitForStateChangedAsync>d__17.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Grpc.Core.Channel.<ConnectAsync>d__25.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SkyApm.Transport.Grpc.ConnectionManager.<ConnectAsync>d__10.MoveNext()
+2019-03-24 18:38:10.936 +08:00 [MI.Service.Picture] [Information] SkyApm.Transport.Grpc.ConnectionManager : Shutdown connection[localhost:11800].
+2019-03-24 18:38:20.963 +08:00 [MI.Service.Picture] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.<WaitForStateChangedAsync>d__17.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Grpc.Core.Channel.<ConnectAsync>d__25.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SkyApm.Transport.Grpc.ConnectionManager.<ConnectAsync>d__10.MoveNext()
+2019-03-24 18:38:25.920 +08:00 [MI.Service.Picture] [Information] SkyApm.Transport.Grpc.ConnectionManager : Shutdown connection[localhost:11800].
+2019-03-24 18:38:35.940 +08:00 [MI.Service.Picture] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.<WaitForStateChangedAsync>d__17.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Grpc.Core.Channel.<ConnectAsync>d__25.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SkyApm.Transport.Grpc.ConnectionManager.<ConnectAsync>d__10.MoveNext()
+2019-03-24 18:38:40.916 +08:00 [MI.Service.Picture] [Information] SkyApm.Transport.Grpc.ConnectionManager : Shutdown connection[localhost:11800].
+2019-03-24 18:40:01.028 +08:00 [MI.Service.Picture] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-03-24 18:40:01.083 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-03-24 18:40:01.084 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-03-24 18:40:01.084 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-03-24 18:40:01.085 +08:00 [MI.Service.Picture] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-03-24 18:40:01.085 +08:00 [MI.Service.Picture] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-03-24 18:40:01.089 +08:00 [MI.Service.Picture] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-03-24 18:40:01.111 +08:00 [MI.Service.Picture] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-03-24 18:40:01.113 +08:00 [MI.Service.Picture] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.

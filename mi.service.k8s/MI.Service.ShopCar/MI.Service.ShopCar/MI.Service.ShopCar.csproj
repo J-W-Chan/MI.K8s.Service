@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Com.Ctrip.Framework.Apollo.Configuration" Version="1.5.1" />
+    <PackageReference Include="Consul" Version="0.7.2.6" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
+    <PackageReference Include="log4net.Kafka.Core" Version="1.0.2" />
+    <PackageReference Include="MI.APIClientService" Version="1.0.0.9" />
+    <PackageReference Include="MI.Service.Account.Model" Version="1.0.0.6" />
+    <PackageReference Include="MI.Untity" Version="1.0.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="2.2.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="SkyAPM.Agent.AspNetCore" Version="0.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MI.Service.ShopCar.Entity\MI.Service.ShopCar.Entity.csproj" />
+    <ProjectReference Include="..\MI.Service.ShopCar.Model\MI.Service.ShopCar.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MI.Service.Account.Model">
+      <HintPath>Library\MI.Service.Account.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="MI.Untity">
+      <HintPath>Library\MI.Untity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

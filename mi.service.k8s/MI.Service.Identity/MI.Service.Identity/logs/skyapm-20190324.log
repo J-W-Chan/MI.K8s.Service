@@ -1,0 +1,48 @@
+2019-03-24 18:25:23.835 +08:00 [MI.Service.Identity] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-03-24 18:25:23.891 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-03-24 18:25:23.891 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-03-24 18:25:23.892 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-03-24 18:25:23.899 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-03-24 18:25:23.904 +08:00 [MI.Service.Identity] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-03-24 18:25:23.905 +08:00 [MI.Service.Identity] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-03-24 18:25:23.972 +08:00 [MI.Service.Identity] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-03-24 18:25:23.973 +08:00 [MI.Service.Identity] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2019-03-24 18:25:34.219 +08:00 [MI.Service.Identity] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.WaitForStateChangedAsync(ChannelState lastObservedState, Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+   at Grpc.Core.Channel.ConnectAsync(Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+   at SkyApm.Transport.Grpc.ConnectionManager.ConnectAsync()
+2019-03-24 18:25:38.947 +08:00 [MI.Service.Identity] [Information] SkyApm.Transport.Grpc.ConnectionManager : Shutdown connection[192.168.1.102:7000].
+2019-03-24 18:25:48.520 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.RegisterService : Stopped instrument service RegisterService.
+2019-03-24 18:25:48.520 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.PingService : Stopped instrument service PingService.
+2019-03-24 18:25:48.520 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Stopped instrument service ServiceDiscoveryV5Service.
+2019-03-24 18:25:48.520 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.SegmentReportService : Stopped instrument service SegmentReportService.
+2019-03-24 18:25:48.520 +08:00 [MI.Service.Identity] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Stopped instrument service SimpleCountSamplingInterceptor.
+2019-03-24 18:25:48.520 +08:00 [MI.Service.Identity] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Stopped instrument service ConnectService.
+2019-03-24 18:25:48.520 +08:00 [MI.Service.Identity] [Information] SkyApm.InstrumentStartup : Stopped SkyAPM .NET Core Agent.
+2019-03-24 18:25:48.969 +08:00 [MI.Service.Identity] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.WaitForStateChangedAsync(ChannelState lastObservedState, Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+   at Grpc.Core.Channel.ConnectAsync(Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+   at SkyApm.Transport.Grpc.ConnectionManager.ConnectAsync()
+2019-03-24 18:26:09.728 +08:00 [MI.Service.Identity] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-03-24 18:26:09.759 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-03-24 18:26:09.759 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-03-24 18:26:09.759 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-03-24 18:26:09.760 +08:00 [MI.Service.Identity] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-03-24 18:26:09.765 +08:00 [MI.Service.Identity] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-03-24 18:26:09.767 +08:00 [MI.Service.Identity] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-03-24 18:26:09.787 +08:00 [MI.Service.Identity] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-03-24 18:26:09.788 +08:00 [MI.Service.Identity] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2019-03-24 18:26:19.954 +08:00 [MI.Service.Identity] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.WaitForStateChangedAsync(ChannelState lastObservedState, Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+   at Grpc.Core.Channel.ConnectAsync(Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+   at SkyApm.Transport.Grpc.ConnectionManager.ConnectAsync()
+2019-03-24 18:26:24.805 +08:00 [MI.Service.Identity] [Information] SkyApm.Transport.Grpc.ConnectionManager : Shutdown connection[192.168.1.102:7000].
+2019-03-24 18:26:34.820 +08:00 [MI.Service.Identity] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.WaitForStateChangedAsync(ChannelState lastObservedState, Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+   at Grpc.Core.Channel.ConnectAsync(Nullable`1 deadline) in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+   at SkyApm.Transport.Grpc.ConnectionManager.ConnectAsync()
+2019-03-24 18:26:39.808 +08:00 [MI.Service.Identity] [Information] SkyApm.Transport.Grpc.ConnectionManager : Shutdown connection[192.168.1.102:7000].

@@ -1,0 +1,28 @@
+﻿@using MI.Service.Monitor.Model.Response
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<table class="table">
+    <tr>
+        <th>RoutingKey</th>
+        <td>详情</td>
+    </tr>
+    @foreach (var item in Model as IEnumerable<RabbitMQRegisterInfoEntity>)
+    {
+        <tr>
+            <td>@item.RoutingKey</td>
+            <td>
+                @foreach (var itemUrl in item.ApiUrlList)
+                {
+                    @itemUrl <br />
+                }
+            </td>
+        </tr>
+
+    }
+
+</table>
+

@@ -1,0 +1,24 @@
+2019-05-04 19:07:46.739 +08:00 [MI.Service.ShopCar] [Information] SkyApm.InstrumentStartup : Initializing ...
+2019-05-04 19:07:46.790 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2019-05-04 19:07:46.791 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2019-05-04 19:07:46.791 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Service.ServiceDiscoveryV5Service : Loaded instrument service [SkyApm.Service.ServiceDiscoveryV5Service].
+2019-05-04 19:07:46.792 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2019-05-04 19:07:46.792 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2019-05-04 19:07:46.793 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Transport.Grpc.V6.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.V6.ConnectService].
+2019-05-04 19:07:46.855 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2019-05-04 19:07:46.856 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [HttpHandlerDiagnosticListener].
+2019-05-04 19:07:46.856 +08:00 [MI.Service.ShopCar] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2019-05-04 19:07:57.209 +08:00 [MI.Service.ShopCar] [Error] SkyApm.Transport.Grpc.ConnectionManager : Connect server timeout.
+System.Threading.Tasks.TaskCanceledException: Reached deadline.
+   at Grpc.Core.Channel.<WaitForStateChangedAsync>d__17.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 139
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Grpc.Core.Channel.<ConnectAsync>d__25.MoveNext() in T:\src\github\grpc\src\csharp\Grpc.Core\Channel.cs:line 220
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SkyApm.Transport.Grpc.ConnectionManager.<ConnectAsync>d__10.MoveNext()
+2019-05-04 19:08:01.851 +08:00 [MI.Service.ShopCar] [Information] SkyApm.Transport.Grpc.ConnectionManager : Shutdown connection[localhost:11800].

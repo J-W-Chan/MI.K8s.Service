@@ -1,0 +1,286 @@
+﻿body{
+    margin:0px;
+    padding:0px;
+}
+
+.home_container {
+    width:1366px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.home-hero{
+    width:1366px;
+    height:460px;
+    position:relative;
+}
+
+.ul-wrapper {
+    width:1366px;
+    margin-top:0px;
+    padding-top:0px;
+}
+
+.ul-viewport{
+    height:455px;
+    width:235px;
+    float:left;
+    background:rgba(0,0,0,0.6);
+    margin-left:80px;
+    margin-top:23px;
+}
+
+.li_hero_sort {
+    list-style:none;
+    /*padding-left:10px;*/
+    margin-left:-20px;
+    padding-left:0px;
+}
+
+.ui_link {
+    font-size:16px;
+    color:white;
+    padding-left:10px;
+}
+
+.ul-viewport li a{
+    text-decoration:none;
+    line-height:42px;
+    font-size:14px;
+    padding-left:30px;
+}
+
+/*当鼠标移动到左侧导航栏时添加背景色*/
+.ul-viewport li:hover{
+    background-color:#ff6700;
+}
+
+.ul-viewport li a:visited{
+    color:white;
+}
+
+.ul-viewport li a:hover{
+    color:white;
+}
+
+
+.arrow {
+    float:right;
+    margin-right:20px;
+    margin-top:10px;
+    font-size:15px;
+    color:white;
+}
+
+.right_next{
+    position:absolute;
+    right:120px;
+    top:220px;
+    width:28px;
+    height:41px;
+    background:rgba(0,0,0,0.6);
+    opacity:0.1;
+}
+
+.left_up{
+    position:absolute;
+    left:340px;
+    top:220px;
+    width:30px;
+    height:41px;
+    background:rgba(0,0,0,0.6);
+    opacity:0.1;
+}
+
+.slideimg_box{
+    width:955px;
+    height:465px;
+    margin:0px;
+    padding:0px;
+}
+
+.slide-list{
+    width:4775px;
+    list-style:none;
+    overflow:hidden;
+}
+
+.item-img{
+    width:955px;
+    height:465px;
+    float:left;
+}
+
+.item-img img{
+    width:955px;
+    margin-left:-21px;
+    height:465px;
+}
+
+.right_next i:hover{
+    opacity:0.6;
+}
+
+.home_hero_sub{
+    width:1190px;
+    height:170px;
+    margin-top:35px;
+    margin-left:80px;
+}
+
+.span4{
+    width:234px;
+    height:170px;
+    float:left;
+}
+
+.span3 {
+    margin-left:0px;
+    height:170px;
+    float:left;
+    margin-left:-15px;
+}
+
+.span3 li{
+    list-style:none;
+    float:left;
+    margin-left:10px;
+}
+
+.span3 img{
+    width:306px;
+    height:170px;
+}
+
+.home_starts_goods {
+    width:1190px;
+    height:438px;
+    margin-left:80px;
+}
+
+.box-head{
+    width:1190px;
+    height:58px;
+    margin-top:35px;
+}
+
+.box-body{
+    width:1190px;
+    height:340px;
+    overflow:hidden;
+}
+
+.box-body li{
+    background:#fafafa;
+    text-align:center;
+    list-style:none;
+    width:220px;
+    height:340px;
+    float:left;
+    border-top:1px solid #ffac13;
+    margin-left:13px;
+    position:relative;
+}
+
+.box-body li a{
+    text-decoration:none;
+    color:#333;
+}
+
+.box-body img{
+    text-align:center;
+    width:160px;
+    height:166px;
+    margin-top:20px;
+}
+
+.title {
+    font-size:14px;
+    text-align:center;
+}
+
+.describe{
+    color:#b0b0b0;
+    text-align:center;
+}
+
+.price{
+    font-size:14px;
+    text-align:center;
+    color:#ff6709;
+}
+
+.more{
+    position:absolute;
+    top:825px;
+    right:100px;
+}
+
+.more a{
+    width:23px;
+    height:23px;
+    border:1px solid #e0e0e0;
+    padding:3px 5px;
+    font-size:16px;
+    line-height:16px;
+}
+
+.home_main{
+    width:1366px;
+    background:#f5f5f5;
+}
+
+.smart1{
+    width:1190px;
+    margin-left:80px;
+    padding-top:35px;
+    height:700px;
+}
+
+.box-body-smart1{
+    width:1210px;
+    height:635px;
+}
+
+.smart1-span4 {
+    width:234px;
+    height:635px;
+    float:left;
+}
+
+.smart1-span4:hover{
+    border:1px solid #e0e0e0;
+    box-shadow:5px 10px 3px 1px #e0e0e0;
+}
+
+.smart1-span16{
+    width:976px;
+    height:650px;
+    float:left;
+}
+
+.smart1-span16 li{
+    width:220px;
+    margin-left:13px;
+    height:300px;
+    float:left;
+    text-align:center;
+    background:#fff;
+    margin-bottom:14px;
+}
+
+.smart1-span16 li a{
+    text-align:center;
+    color:#333;
+    text-decoration:none;
+}
+
+.smart1-span16 img{
+    width:160px;
+    height:166px;
+}
+
+.smart1-span16 li:hover{
+    border:1px solid #e0e0e0;
+    box-shadow:5px 10px 3px 1px #e0e0e0;
+}

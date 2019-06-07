@@ -1,0 +1,70 @@
+﻿<style type="text/css">
+    .site-header {
+        width: 1349px;
+        height: 102px;
+        border-bottom: 2px solid #ff6700;
+        background: #fff;
+        color: #b0b0b0;
+    }
+
+    .container {
+        width: 1226px;
+        height: 75px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header-logo {
+        position: absolute;
+        top: 28px;
+        left: 70px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .topbar {
+        float: right;
+        margin-left: 70px;
+        margin-top: 30px;
+        line-height: 40px;
+    }
+
+        .topbar a {
+            text-decoration: none;
+            color: #757575;
+            font-size: 12px;
+        }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        $(".header-logo").mouseover(buyLogoOver);
+        $(".header-logo").mouseout(buyHomeOut);
+    });
+
+    function buyLogoOver() {
+        $(".header-logo img").attr("src", "/Images/buy-home.jpg");
+    }
+
+    function buyHomeOut() {
+        $(".header-logo img").attr("src", "/Images/buy-logo.jpg");
+    }
+</script>
+
+<div class="site-header">
+    <div class="container">
+        <div class="header-logo"><a href="/Home/Index"><img src="~/Images/buy-logo.jpg" /></a></div>
+        <div class="topbar">
+            @*@if (Session["uInfo"] != null)
+        {
+            <a href="/Order/OrderView">@Session["uInfo"].ToString()</a>
+        }
+        else
+        {
+            <a href="/Login/Login">登录</a>
+        }*@
+            <a href="/Login/Login">登录</a>
+            <a href="#">注册</a>
+        </div>
+    </div>
+</div>
